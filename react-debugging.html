@@ -62,14 +62,22 @@
           }
           // No need to change anything ABOVE this line ^
 
+          //*******************//
+          // 1. I added JSX fragment to wrap around a block code 
+          // 2. I used the console and found that 'shuffle is not defined' so I added this.shuffle 
+          // 3. this.drawCard is added on the onClick button to get the drawCard function above
+
           return(
+            <>
               <h1>Draw a Card</h1>
-              <button onClick={}>
+              <button onClick={this.drawCard}> 
                 Click to Draw a Card
               </button>
-              <button onClick={shuffle}>
+
+              <button onClick={this.shuffle}>
                 Return Cards and Shuffle Deck
               </button>
+
               <div style={handStyles}>
                 {this.state.hand.map((card, index) => {
                   return (
@@ -79,6 +87,8 @@
                   )
                 })}
               </div>
+
+            </>
           )
         }
       }
